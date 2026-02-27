@@ -1,0 +1,162 @@
+/* custom theme overrides for perpustakaan application */
+:root {
+  --primary-color: #2a9d8f;
+  --secondary-color: #e76f51;
+  --accent-color: #f4a261;
+  --bg-gradient: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+  --card-bg: #ffffff;
+  --card-radius: 12px;
+  --card-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--font-base);
+  background: var(--bg-gradient);
+  color: #222;
+}
+
+/* navbar tweaks */
+.navbar {
+  background: var(--primary-color) !important;
+}
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+.navbar-brand {
+  font-weight: bold;
+  color: #fff !important;
+}
+
+/* cards */
+.card {
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* buttons */
+.btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+/* tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th,
+table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.1);
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* forms */
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(231,111,81,.25);
+}
+
+.container {
+  padding-top: 2rem;
+}
+
+/* fade-in utility */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* login page (MJ-style) */
+body.login-page {
+  background: #111 url('https://i.imgur.com/3tA1Ymp.jpg') no-repeat center center/cover; /* MJ wallpaper example */
+  color: #fff;
+}
+.login-container {
+  max-width: 360px;
+  padding: 2.5rem 2rem;
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  animation: slideUp 0.8s ease-out;
+}
+.login-logo {
+  width: 120px;
+  margin-bottom: 1.5rem;
+  animation: rotateIn 1s ease-in-out;
+}
+.btn-login {
+  background: #c8102e; /* bulls red */
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: background 0.3s ease;
+}
+.btn-login:hover {
+  background: #a30f26;
+}
+.form-control {
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #c8102e;
+}
+
+/* input group icons */
+.input-group-text {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+.input-group .form-control {
+  border-left: none;
+}
+
+/* spinner on button */
+.btn .spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+  vertical-align: text-bottom;
+  margin-right: 0.5rem;
+  display: none;
+}
+.btn.loading .spinner-border {
+  display: inline-block;
+}
+.btn.loading .btn-text {
+  opacity: 0;
+}
+
+/* animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rotateIn {
+  from { opacity: 0; transform: rotate(-360deg) scale(0); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
+}
